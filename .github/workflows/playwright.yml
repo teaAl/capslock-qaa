@@ -54,7 +54,7 @@ jobs:
 
       - name: Test
         continue-on-error: true
-        run: npx playwrigt test
+        run: npx playwright test
 
       - name: Upload test report
         if: always()
