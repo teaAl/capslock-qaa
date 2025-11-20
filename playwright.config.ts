@@ -1,12 +1,15 @@
+import { config as dotenvConfig } from "dotenv";
 import { defineConfig, devices } from "@playwright/test";
 
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
-// import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
+dotenvConfig();
+
+const crossBrowserConfig = {
+  testDir: "./tests/visual/cross-browser",
+  snapshotPathTemplate: ".test/cross/{testFilePath}/{arg}{ext}",
+  expect: {
+    toHaveScreenshot: { maxDiffPixelRatio: 0.1 },
+  },
+};
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -40,19 +43,24 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
+      name: "cross-chromium",
+      use: { ...devices["Desktop Chrome"], channel: "chrome" },
+      ...crossBrowserConfig,
     },
 
     {
-      name: "firefox",
+      name: "cross-firefox",
       use: { ...devices["Desktop Firefox"] },
+      dependencies: ["cross-chromium"],
+      ...crossBrowserConfig,
     },
 
-    {
-      name: "webkit",
-      use: { ...devices["Desktop Safari"] },
-    },
+    // {
+    //   name: "cross-browser",
+    //   use: { ...devices["Desktop Safari"] },
+    //   dependencies: ["cross-firefox"],
+    //   ...crossBrowserConfig,
+    // },
 
     /* Test against mobile viewports. */
     // {
