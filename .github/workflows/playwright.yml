@@ -22,6 +22,9 @@ on:
 jobs:
   run-tests:
     runs-on: ubuntu-latest
+    env:
+      E2E_BASE_URL: ${{secrets.E2E_BASE_URL}}
+
     timeout-minutes: 60
     steps:
       - name: Checkout
