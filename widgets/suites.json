@@ -1,1 +1,1 @@
-{"total":0,"items":[]}
+{"total":2,"items":[{"uid":"68dd5a0bfe784bc5c990d4012c7bbea1","name":"cross-chromium","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}},{"uid":"329eeb3f25d74c2b8fb82986a80ac5b2","name":"cross-firefox","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}
