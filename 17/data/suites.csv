@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","5610","cross-browser snapshots","cross-chromium","Fri Nov 21 15:19:22 UTC 2025","passed","Fri Nov 21 15:19:28 UTC 2025","","visual/cross-browser/landingpage.spec.ts","",""
+"","3321","cross-browser snapshots","cross-firefox","Fri Nov 21 15:19:34 UTC 2025","passed","Fri Nov 21 15:19:37 UTC 2025","","visual/cross-browser/landingpage.spec.ts","",""
