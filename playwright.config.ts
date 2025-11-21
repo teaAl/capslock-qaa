@@ -33,6 +33,7 @@ export default defineConfig({
         open: "never",
       },
     ],
+    ["allure-playwright"],
     isCI ? ["github"] : ["line"],
   ],
   use: {
