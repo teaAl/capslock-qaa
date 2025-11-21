@@ -39,7 +39,7 @@ export default defineConfig({
   use: {
     baseURL: process.env.E2E_BASE_URL,
     trace: "retain-on-failure",
-    screenshot: "only-on-failure",
+    screenshot: "on",
     video: "retain-on-failure",
     headless: process.env.CI === "true" ? true : false,
   },
